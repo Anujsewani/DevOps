@@ -40,6 +40,14 @@ pipeline{
                     }
                 }
             }
+	 stage('Run docker image')
+	      {
+		steps{
+			script{
+				sh "docker run -p 8000:8000 ${dockerImage}:${env.BUILD_NUMBER}"
+				}	
+			
+		}
         }
        
 }
