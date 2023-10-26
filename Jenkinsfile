@@ -44,6 +44,7 @@ pipeline{
 	      {
 		steps{
 			script{
+				def dockerImage = 'sewani/djangohell0'
 				sh "docker run -p 8000:8000 ${dockerImage}:${env.BUILD_NUMBER}"
 				}	
 			}	
